@@ -1,18 +1,28 @@
 import 'package:folio/configs/configs.dart';
 import 'package:folio/utils/about_utils.dart';
 import 'package:folio/utils/utils.dart';
-import 'package:folio/utils/work_utils.dart';
 
 import 'package:folio/widget/custom_text_heading.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:flutter/material.dart';
 import 'package:folio/constants.dart';
 import 'package:folio/widget/about_me_data.dart';
-import 'package:folio/widget/community_button.dart';
 import 'package:folio/widget/tech_widget.dart';
 
 class AboutTab extends StatelessWidget {
   const AboutTab({Key? key}) : super(key: key);
+
+  int calculateAge(day, month, year) {
+    final birthDate = DateTime(year, month, day);
+    final currentDate = DateTime.now();
+    int age = currentDate.year - birthDate.year;
+
+    if (currentDate.month < currentDate.month ||
+        (currentDate.month == currentDate.month &&
+            currentDate.day < currentDate.day)) age--;
+
+    return age;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,30 +105,30 @@ class AboutTab extends StatelessWidget {
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  AboutMeData(
+                children: [
+                  const AboutMeData(
                     data: "Name",
-                    information: "Muhammad Hamza",
+                    information: "Rushikesh Narwade",
                   ),
                   AboutMeData(
                     data: "Age",
-                    information: "24",
+                    information: calculateAge(5, 5, 1999).toString(),
                   ),
                 ],
               ),
               SizedBox(
                 width: width > 710 ? width * 0.2 : width * 0.05,
               ),
-              Column(
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   AboutMeData(
                     data: "Email",
-                    information: "hamza.6.shakeel@gmail.com",
+                    information: "rushikeshnarwade53@gmail.com",
                   ),
                   AboutMeData(
                     data: "From",
-                    information: "Attock, PK",
+                    information: "Maharashtra, INDIA",
                   ),
                 ],
               ),
@@ -132,38 +142,10 @@ class AboutTab extends StatelessWidget {
                 width: AppDimensions.normalize(40),
                 child: OutlinedButton(
                   onPressed: () => html.window.open(StaticUtils.resume, 'pdf'),
-                  child: const Text(
-                    "Resume",
-                  ),
+                  child: const Text("Resume"),
                 ),
               ),
-              Space.x!,
-              Container(
-                width: width * 0.05,
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: Colors.grey[900]!,
-                      width: 2.0,
-                    ),
-                  ),
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                    children: WorkUtils.logos
-                        .asMap()
-                        .entries
-                        .map(
-                          (e) => CommunityIconBtn(
-                            icon: e.value,
-                            link: WorkUtils.communityLinks[e.key],
-                            height: WorkUtils.communityLogoHeight[e.key],
-                          ),
-                        )
-                        .toList()),
-              ),
+              // Space.x!,
             ],
           )
         ],

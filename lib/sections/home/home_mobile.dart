@@ -42,9 +42,7 @@ class HomeMobile extends StatelessWidget {
                   children: [
                     Text(
                       "HEY THERE! ",
-                      style: AppText.b2!.copyWith(
-                        fontFamily: 'Montserrat',
-                      ),
+                      style: AppText.b2!.copyWith(fontFamily: 'Montserrat'),
                     ),
                     Space.x!,
                     Image.asset(
@@ -55,17 +53,13 @@ class HomeMobile extends StatelessWidget {
                 ),
                 Space.y!,
                 Text(
-                  "Muhammad",
+                  "Rushikesh",
                   style: AppText.h3!.copyWith(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w100,
-                  ),
+                      fontFamily: 'Montserrat', fontWeight: FontWeight.w100),
                 ),
                 Text(
-                  "Hamza",
-                  style: AppText.h3b!.copyWith(
-                    height: 1,
-                  ),
+                  "Narwade",
+                  style: AppText.h3b!.copyWith(height: 1),
                 ),
                 Space.y!,
                 Row(
@@ -82,7 +76,7 @@ class HomeMobile extends StatelessWidget {
                           textStyle: AppText.b1,
                         ),
                         TyperAnimatedText(
-                          ' UI/UX Enthusiast',
+                          'Backend Developer',
                           speed: const Duration(milliseconds: 50),
                           textStyle: AppText.b1,
                         ),

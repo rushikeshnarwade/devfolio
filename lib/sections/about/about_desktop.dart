@@ -95,14 +95,14 @@ class AboutDesktop extends StatelessWidget {
                         color: Colors.grey[800],
                         thickness: AppDimensions.normalize(0.5),
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               AboutMeData(
                                 data: "Name",
-                                information: "Muhammad Hamza",
+                                information: "Rushikesh Narwade",
                               ),
                               AboutMeData(
                                 data: "Age",
@@ -110,17 +110,17 @@ class AboutDesktop extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const Spacer(),
+                          Spacer(),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               AboutMeData(
                                 data: "Email",
-                                information: "hamza.6.shakeel@gmail.com",
+                                information: "rushikeshnarwade53@gmail.com",
                               ),
                               AboutMeData(
                                 data: "From",
-                                information: "Attock, PK",
+                                information: "Pune, India",
                               ),
                             ],
                           ),
@@ -140,22 +140,22 @@ class AboutDesktop extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Space.x1!,
-                          Container(
-                            color: Colors.grey[900]!,
-                            width: AppDimensions.normalize(30),
-                            height: AppDimensions.normalize(0.5),
-                          ),
-                          ...WorkUtils.logos.asMap().entries.map(
-                                (e) => Expanded(
-                                  child: CommunityIconBtn(
-                                    icon: e.value,
-                                    link: WorkUtils.communityLinks[e.key],
-                                    height:
-                                        WorkUtils.communityLogoHeight[e.key],
-                                  ),
-                                ),
-                              )
+                          // Space.x1!,
+                          // Container(
+                          //   color: Colors.grey[900]!,
+                          //   width: AppDimensions.normalize(30),
+                          //   height: AppDimensions.normalize(0.5),
+                          // ),
+                          // ...WorkUtils.logos.asMap().entries.map(
+                          //       (e) => Expanded(
+                          //         child: CommunityIconBtn(
+                          //           icon: e.value,
+                          //           link: WorkUtils.communityLinks[e.key],
+                          //           height:
+                          //               WorkUtils.communityLogoHeight[e.key],
+                          //         ),
+                          //       ),
+                          //     )
                         ],
                       ),
                     ],

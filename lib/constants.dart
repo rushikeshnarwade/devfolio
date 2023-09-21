@@ -10,6 +10,6 @@ final kTools = [
   "Flutter",
   "Dart",
   "Python",
-  "Java",
+  "JavaScript",
   "C++",
 ];
